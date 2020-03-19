@@ -1,0 +1,14 @@
+<%- include("partials/header"); -%>
+<h1>Home</h1>
+<p1>  <%= pText %> </p1>
+  <% posts.forEach(function(post) { %>
+      <form>
+       <h1> <%= post.title %> </h1>
+       <p>  <%= post.body.substring(0,100)+"..." %> </p>
+       <a href="/posts/<%= post.title %>" method="get">Read More</a>
+       </form>
+       <% }) %>
+<%- include("partials/footer"); -%>
+
+
+  <%# "minimist": ">=1.2.2" %>
