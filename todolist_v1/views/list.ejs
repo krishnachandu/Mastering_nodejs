@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <link rel="stylesheet" href="css/styles.css">
+    <meta charset="utf-8">
+    <title>To Do List</title>
+</head>
+<body>
+<!--<p>It s a week day</p>-->
+<div class="box" id="heading">
+
+  <h1> <%= listTitle %> </h1>
+</div>
+
+
+    <h1 style="color: purple"> <%= listTitle %> </h1>
+<ul>
+
+    <% var res=listTitle %>
+    <% console.log(listTitle)%>
+     <% newListItems.forEach(function (item) { %>
+    <form action="/delete" method="post">
+     <div class="item">
+             <input type="checkbox" name="checkbox" value="<%= item._id %>" onchange="this.form.submit()">
+         <p><%= item.name %></p>
+        <input type="hidden" name="customName" value="<%= listTitle %>">
+    </div>
+    </form>
+    <% }) %>
+
+</ul>
+    <form class="" method="post" action="/">
+        <label>
+            <input name="newItem" type="text" placeholder="Enter text">
+        </label>
+        <button  name="customName1" value="<%= listTitle%>" type="submit"></button>
+    </form>
+</body>
+</html>
